@@ -4,12 +4,21 @@
 
         // Whenever the elevator is idle (has no more queued destinations) ...
         elevator.on("idle", function() {
-            // let's go to all the floors (or did we forget one?)
+            // whenever it has nothing else to do, goes to each floor and checks if there are any passengers
             elevator.goToFloor(0);
             elevator.goToFloor(1);
+            elevator.goToFloor(2);
+            elevator.goToFloor(3);
+            elevator.goToFloor(4);
         });
     },
     update: function(dt, elevators, floors) {
         // We normally don't need to do anything here
     }
 }
+
+
+
+
+//elevators, floors/
+//both arrays of objects
