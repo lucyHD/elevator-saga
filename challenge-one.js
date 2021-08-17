@@ -1,22 +1,41 @@
 {
     init: function(elevators, floors) {
         var elevator = elevators[0]; // Let's use the first elevator
+        var elevatorTwo = elevators[1];
+        var elevatorThree = elevators[2];
+        var elevatorFour = elevators[3];
+        
+        elevator.on("floor_button_pressed", function(floorNum) {
+            elevator.goToFloor(floorNum)
+        })
+        
+        elevatorTwo.on("floor_button_pressed", function(floorNum) {
+            elevatorTwo.goToFloor(floorNum)
+        })
+        
+        elevatorThree.on("floor_button_pressed", function(floorNum) {
+            elevatorThree.goToFloor(floorNum)
+        })
+        
+        elevatorFour.on("floor_button_pressed", function(floorNum) {
+            elevatorFour.goToFloor(floorNum)
+        })
 
         // Whenever the elevator is idle (has no more queued destinations) ...
         elevator.on("idle", function() {
-            // whenever it has nothing else to do, goes to each floor and checks if there are any passengers
-            elevator.goToFloor(0);
-            elevator.goToFloor(1);
-            elevator.goToFloor(2);
-            elevator.goToFloor(3);
-            elevator.goToFloor(4);
+            // let's go to all the floors (or did we forget one?)
+            
+        });
+        
+        elevatorTwo.on("idle", function() {
+            // let's go to all the floors (or did we forget one?)
+           
         });
     },
     update: function(dt, elevators, floors) {
         // We normally don't need to do anything here
     }
 }
-
 
 
 
